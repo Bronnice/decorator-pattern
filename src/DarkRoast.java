@@ -1,10 +1,14 @@
 public class DarkRoast extends Beverage {
 
     public DarkRoast(){
-        description = "Тёмный обжаренный";
-        Price += 3.99;
-
+        setDescription("Тёмный обжаренный ");
+        setPrice(3.99);
     }
     @Override
-    public Double cost() { return Price; }
+    public String cost() {
+        hasMilk();
+        hasMocha();
+        hasSoy();
+        hasWhip();
+        return description + Price; }
 }

@@ -14,15 +14,23 @@ public abstract class Beverage {
 
     Double Price;
 
+    public void setPrice(Double newprice){
+        Price = newprice;
+    }
+
+    public void setDescription(String newdescription){
+        description = newdescription;
+    }
     public String getDescription(){
         return description;
     }
 
-    public abstract Double cost();
+    public abstract String cost();
 
     public void hasMilk(){
         if (milk == Boolean.TRUE){
             Price += milkprice;
+            description += "+ молоко ";
         }
     }
     public void setMilk(){
@@ -32,6 +40,7 @@ public abstract class Beverage {
     public void hasSoy(){
         if (soy == Boolean.TRUE){
             Price += soyprice;
+            description += "+ соя ";
         }
     }
     public void setSoy(){
@@ -41,6 +50,7 @@ public abstract class Beverage {
     public void hasMocha(){
         if (mocha == Boolean.TRUE){
             Price += mochaprice;
+            description += "+ мокачино ";
         }
     }
     public void setMocha(){
@@ -50,6 +60,7 @@ public abstract class Beverage {
     public void hasWhip(){
         if(whip == Boolean.TRUE){
             Price += whipprice;
+            description += "+ взбить ";
         }
     }
     public void setWhip(){
