@@ -14,6 +14,10 @@ public abstract class Beverage {
 
     Double Price;
 
+    public String getDescription(){
+        return description;
+    }
+
     public abstract Double cost();
 
     public void hasMilk(){
