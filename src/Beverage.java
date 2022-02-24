@@ -7,71 +7,68 @@ public abstract class Beverage {
     Integer mocha = 0;
     Integer whip = 0;
 
-    Double milkprice = 1.99;
-    Double soyprice = 2.99;
-    Double mochaprice = 0.99;
-    Double whipprice = 0.59;
+    Double milkPrice = 1.99;
+    Double soyPrice = 2.99;
+    Double mochaPrice = 0.99;
+    Double whipPrice = 0.59;
 
     Double Price;
 
-    public void setPrice(Double newprice){
-        Price = newprice;
+    public void setPrice(Double newPrice){
+        Price = newPrice;
     }
 
-    public void setDescription(String newdescription){
-        description = newdescription;
-    }
-    public String getDescription(){
-        return description;
+    public void setDescription(String newDescription){
+        description = newDescription;
     }
 
     public abstract String cost();
 
     public void hasMilk(){
         if (milk > 0){
-            Price += milkprice * milkcounter;
-            description += "+" + milkcounter + " молоко ";
+            Price += milkPrice * milkCounter;
+            description += "+" + milkCounter + " молоко ";
         }
     }
-    Integer milkcounter = 0;
+    Integer milkCounter = 0;
     public void setMilk(){
         milk ++;
-        milkcounter++;
+        milkCounter++;
     }
 
-    Integer soycounter = 0;
+    Integer soyCounter = 0;
     public void hasSoy(){
         if (soy > 0){
-            Price += soyprice*soycounter;
-            description +="+" + soycounter + " соя ";
+            Price += soyPrice * soyCounter;
+            description +="+" + soyCounter + " соя ";
         }
     }
     public void setSoy(){
         soy ++;
-        soycounter++;
+        soyCounter++;
     }
 
-    Integer mochacounter = 0;
+    Integer mochaCounter = 0;
     public void hasMocha(){
         if (mocha > 0){
-            Price += mochaprice*mochacounter;
-            description += "+" + mochacounter + " мокачино ";
+            Price += mochaPrice * mochaCounter;
+            description += "+" + mochaCounter + " мокачино ";
         }
     }
     public void setMocha(){
         mocha ++;
-        mochacounter++;
+        mochaCounter++;
     }
 
-    Integer whipcounter = 0;
+    Integer whipCounter = 0;
     public void hasWhip(){
         if(whip > 0){
-            Price += whipprice*whipcounter;
-            description += "+" + whipcounter + " взбить ";
+            Price += whipPrice * whipCounter;
+            description += "+" + whipCounter + " взбить ";
         }
     }
     public void setWhip(){
         whip ++;
-        whipcounter++;
+        whipCounter++;
     }
 }
