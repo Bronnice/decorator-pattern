@@ -6,10 +6,10 @@ public class Espresso extends Beverage {
     }
 
     @Override
-    public String cost() {
+    public void cost() {
         hasMilk();
         hasMocha();
         hasSoy();
         hasWhip();
-        return description + Price; }
+    }
 }

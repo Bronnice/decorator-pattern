@@ -6,10 +6,10 @@ public class Program {
         Espresso espresso = new Espresso();
         HouseBlend houseBlend = new HouseBlend();
 
-        System.out.println(darkRoast.cost());
-        System.out.println(decaf.cost());
-        System.out.println(espresso.cost());
-        System.out.println(houseBlend.cost());
+        System.out.println(darkRoast.getDescription());
+        System.out.println(decaf.getDescription());
+        System.out.println(espresso.getDescription());
+        System.out.println(houseBlend.getDescription());
 
 
         darkRoast.setMilk();
@@ -21,9 +21,9 @@ public class Program {
         houseBlend.setMilk();
         houseBlend.setMilk();
 
-        System.out.println(darkRoast.cost());
-        System.out.println(decaf.cost());
-        System.out.println(espresso.cost());
-        System.out.println(houseBlend.cost());
+        System.out.println(darkRoast.getDescription());
+        System.out.println(decaf.getDescription());
+        System.out.println(espresso.getDescription());
+        System.out.println(houseBlend.getDescription());
     }
 }

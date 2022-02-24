@@ -21,8 +21,12 @@ public abstract class Beverage {
     public void setDescription(String newDescription){
         description = newDescription;
     }
+    public String getDescription(){
+        cost();
+        return description + Price;
+    }
 
-    public abstract String cost();
+    public abstract void cost();
 
     public void hasMilk(){
         if (milk > 0){
