@@ -15,8 +15,10 @@ public class Program {
         darkRoast.setMilk();
         darkRoast.setSoy();
         darkRoast.setWhip();
+        darkRoast.setSoy();
 
         houseBlend.setMocha();
+        houseBlend.setMilk();
         houseBlend.setMilk();
 
         System.out.println(darkRoast.cost());

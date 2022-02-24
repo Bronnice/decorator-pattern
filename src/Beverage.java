@@ -2,10 +2,10 @@ public abstract class Beverage {
 
     String description;
 
-    Boolean milk = Boolean.FALSE;
-    Boolean soy = Boolean.FALSE;
-    Boolean mocha = Boolean.FALSE;
-    Boolean whip = Boolean.FALSE;
+    Integer milk = 0;
+    Integer soy = 0;
+    Integer mocha = 0;
+    Integer whip = 0;
 
     Double milkprice = 1.99;
     Double soyprice = 2.99;
@@ -28,42 +28,50 @@ public abstract class Beverage {
     public abstract String cost();
 
     public void hasMilk(){
-        if (milk == Boolean.TRUE){
-            Price += milkprice;
-            description += "+ молоко ";
+        if (milk > 0){
+            Price += milkprice * milkcounter;
+            description += "+" + milkcounter + " молоко ";
         }
     }
+    Integer milkcounter = 0;
     public void setMilk(){
-        milk = Boolean.TRUE;
+        milk ++;
+        milkcounter++;
     }
 
+    Integer soycounter = 0;
     public void hasSoy(){
-        if (soy == Boolean.TRUE){
-            Price += soyprice;
-            description += "+ соя ";
+        if (soy > 0){
+            Price += soyprice*soycounter;
+            description +="+" + soycounter + " соя ";
         }
     }
     public void setSoy(){
-        soy = Boolean.TRUE;
+        soy ++;
+        soycounter++;
     }
 
+    Integer mochacounter = 0;
     public void hasMocha(){
-        if (mocha == Boolean.TRUE){
-            Price += mochaprice;
-            description += "+ мокачино ";
+        if (mocha > 0){
+            Price += mochaprice*mochacounter;
+            description += "+" + mochacounter + " мокачино ";
         }
     }
     public void setMocha(){
-        mocha = Boolean.TRUE;
+        mocha ++;
+        mochacounter++;
     }
 
+    Integer whipcounter = 0;
     public void hasWhip(){
-        if(whip == Boolean.TRUE){
-            Price += whipprice;
-            description += "+ взбить ";
+        if(whip > 0){
+            Price += whipprice*whipcounter;
+            description += "+" + whipcounter + " взбить ";
         }
     }
     public void setWhip(){
-        whip = Boolean.TRUE;
+        whip ++;
+        whipcounter++;
     }
 }
