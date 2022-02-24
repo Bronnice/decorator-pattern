@@ -61,7 +61,7 @@ public abstract class Beverage {
     public void hasWhip(){
         if(whip > 0){
             Price += whipPrice * whip;
-            description += "+" + whip + " взбить ";
+            description += "+" + whip + " взбитые сливки ";
         }
     }
     public void setWhip(){
