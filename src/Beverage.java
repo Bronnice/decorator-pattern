@@ -26,49 +26,41 @@ public abstract class Beverage {
 
     public void hasMilk(){
         if (milk > 0){
-            Price += milkPrice * milkCounter;
-            description += "+" + milkCounter + " молоко ";
+            Price += milkPrice * milk;
+            description += "+" + milk + " молоко ";
         }
     }
-    Integer milkCounter = 0;
     public void setMilk(){
         milk ++;
-        milkCounter++;
     }
 
-    Integer soyCounter = 0;
     public void hasSoy(){
         if (soy > 0){
-            Price += soyPrice * soyCounter;
-            description +="+" + soyCounter + " соя ";
+            Price += soyPrice * soy;
+            description +="+" + soy + " соя ";
         }
     }
     public void setSoy(){
         soy ++;
-        soyCounter++;
     }
 
-    Integer mochaCounter = 0;
     public void hasMocha(){
         if (mocha > 0){
-            Price += mochaPrice * mochaCounter;
-            description += "+" + mochaCounter + " мокачино ";
+            Price += mochaPrice * mocha;
+            description += "+" + mocha + " мокачино ";
         }
     }
     public void setMocha(){
         mocha ++;
-        mochaCounter++;
     }
 
-    Integer whipCounter = 0;
     public void hasWhip(){
         if(whip > 0){
-            Price += whipPrice * whipCounter;
-            description += "+" + whipCounter + " взбить ";
+            Price += whipPrice * whip;
+            description += "+" + whip + " взбить ";
         }
     }
     public void setWhip(){
         whip ++;
-        whipCounter++;
     }
 }
