@@ -5,11 +5,11 @@ public class HouseBlend extends Beverage{
         setPrice(6.99);
     }
 
-    @Override
-    public void cost() {
-        hasMilk();
-        hasMocha();
-        hasSoy();
-        hasWhip();
+    public Double cost(){
+        setPrice(milkPrice * milk);
+        setPrice(soyPrice * soy);
+        setPrice(mochaPrice * mocha);
+        setPrice(whipPrice * whip);
+        return Price;
     }
 }

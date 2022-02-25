@@ -1,6 +1,6 @@
 public abstract class Beverage {
 
-    String description;
+    private String description = "";
 
     Integer milk = 0;
     Integer soy = 0;
@@ -12,56 +12,76 @@ public abstract class Beverage {
     Double mochaPrice = 0.99;
     Double whipPrice = 0.59;
 
-    Double Price;
+    Double Price = 0.0;
 
-    public void setPrice(Double newPrice){
-        Price = newPrice;
+    protected void setPrice(Double newPrice){
+        Price += newPrice;
+    }
+    public Double getPrice(){
+        return Price;
     }
 
-    public void setDescription(String newDescription){
-        description = newDescription;
+    protected void setDescription(String newDescription){
+        description += newDescription;
     }
     public String getDescription(){
-        cost();
-        return description + Price;
+        hasMilk();
+        hasMocha();
+        hasSoy();
+        hasWhip();
+        return description + cost();
     }
 
-    public abstract void cost();
+    public Double cost(){
+        setPrice(milkPrice * milk);
+        setPrice(soyPrice * soy);
+        setPrice(mochaPrice * mocha);
+        setPrice(whipPrice * whip);
+        return getPrice();
+    }
 
-    public void hasMilk(){
-        if (milk > 0){
-            Price += milkPrice * milk;
-            description += "+" + milk + " молоко ";
+    protected void hasMilk(){
+        if (milk ==1){
+            setDescription("+ молоко ");
+        }
+        else if (milk > 1){
+            setDescription("+" + milk + " молоко ");
         }
     }
     public void setMilk(){
         milk ++;
     }
 
-    public void hasSoy(){
-        if (soy > 0){
-            Price += soyPrice * soy;
-            description +="+" + soy + " соя ";
+    protected void hasSoy(){
+        if (soy == 1) {
+            setDescription("+ соя ");
+        }
+        else if (soy > 1){
+            setDescription("+" + soy + " соя ");
         }
     }
     public void setSoy(){
         soy ++;
     }
 
-    public void hasMocha(){
-        if (mocha > 0){
-            Price += mochaPrice * mocha;
-            description += "+" + mocha + " мокачино ";
+    protected void hasMocha(){
+        if (mocha == 1){
+            setDescription("+ мокачино ");
+        }
+        else if (mocha >1){
+            setDescription("+" + mocha + " мокачино ");
         }
     }
     public void setMocha(){
         mocha ++;
     }
 
-    public void hasWhip(){
-        if(whip > 0){
-            Price += whipPrice * whip;
-            description += "+" + whip + " взбитые сливки ";
+    protected void hasWhip(){
+        if(whip == 1){
+            setDescription("+ взбитые сливки ");
+        }
+        else if(whip > 1){
+            setDescription("+" + whip + " взбитые сливки ");
         }
     }
     public void setWhip(){

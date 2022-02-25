@@ -6,12 +6,6 @@ public class Program {
         Espresso espresso = new Espresso();
         HouseBlend houseBlend = new HouseBlend();
 
-        System.out.println(darkRoast.getDescription());
-        System.out.println(decaf.getDescription());
-        System.out.println(espresso.getDescription());
-        System.out.println(houseBlend.getDescription());
-
-
         darkRoast.setMilk();
         darkRoast.setSoy();
         darkRoast.setWhip();

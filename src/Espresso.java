@@ -1,15 +1,15 @@
 public class Espresso extends Beverage {
 
-    public Espresso(){
+    public Espresso() {
         setDescription("Эспрессо ");
         setPrice(4.99);
     }
 
-    @Override
-    public void cost() {
-        hasMilk();
-        hasMocha();
-        hasSoy();
-        hasWhip();
+    public Double cost(){
+        setPrice(milkPrice * milk);
+        setPrice(soyPrice * soy);
+        setPrice(mochaPrice * mocha);
+        setPrice(whipPrice * whip);
+        return Price;
     }
 }
