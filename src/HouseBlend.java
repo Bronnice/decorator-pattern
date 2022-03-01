@@ -1,15 +1,15 @@
 public class HouseBlend extends Beverage{
 
     public HouseBlend(){
-        setDescription("Хаус бленд ");
-        setPrice(6.99);
+        description = "Хаус бленд ";
     }
 
     public Double cost(){
-        setPrice(milkPrice * milk);
-        setPrice(soyPrice * soy);
-        setPrice(mochaPrice * mocha);
-        setPrice(whipPrice * whip);
-        return Price;
+        return
+        milkPrice * milk +
+        soyPrice * soy +
+        mochaPrice * mocha +
+        whipPrice * whip +
+        5.99;
     }
 }

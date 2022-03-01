@@ -1,15 +1,15 @@
 public class Espresso extends Beverage {
 
     public Espresso() {
-        setDescription("Эспрессо ");
-        setPrice(4.99);
+        description = "Эспрессо ";
     }
 
     public Double cost(){
-        setPrice(milkPrice * milk);
-        setPrice(soyPrice * soy);
-        setPrice(mochaPrice * mocha);
-        setPrice(whipPrice * whip);
-        return Price;
+        return
+        milkPrice * milk +
+        soyPrice * soy +
+        mochaPrice * mocha +
+        whipPrice * whip +
+        4.99;
     }
 }
