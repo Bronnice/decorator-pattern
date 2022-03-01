@@ -1,23 +1,28 @@
+import Coffes.*;
+import Decorators.*;
+
 public class Program {
     public static void main(String[] args) {
 
-        DarkRoast darkRoast = new DarkRoast();
-        Decaf decaf = new Decaf();
-        Espresso espresso = new Espresso();
-        HouseBlend houseBlend = new HouseBlend();
+        Beverage beverage1 = new Espresso();
+        System.out.println(beverage1.getDescription() + "$" + beverage1.Cost());
 
-        darkRoast.setMilk();
-        darkRoast.setSoy();
-        darkRoast.setWhip();
-        darkRoast.setSoy();
+        Beverage beverage2 = new DarkRoast();
+        beverage2 = new Mocha(beverage2);
+        beverage2 = new Mocha(beverage2);
+        beverage2 = new Whip(beverage2);
+        System.out.println(beverage2.getDescription() + " $" + beverage2.Cost());
 
-        houseBlend.setMocha();
-        houseBlend.setMilk();
-        houseBlend.setMilk();
+        Beverage beverage3 = new HouseBlend();
+        beverage3 = new Soy(beverage3);
+        beverage3 = new Mocha(beverage3);
+        beverage3 = new Whip(beverage3);
+        System.out.println(beverage3.getDescription() + " $" + Math.round(beverage3.Cost()*10.0)/10.0);
 
-        System.out.println(darkRoast.getDescription());
-        System.out.println(decaf.getDescription());
-        System.out.println(espresso.getDescription());
-        System.out.println(houseBlend.getDescription());
+        Beverage beverage4 = new Decaf();
+        beverage4 = new Milk(beverage4);
+        beverage4 = new Mocha(beverage4);
+        beverage4 = new Whip(beverage4);
+        System.out.println(beverage4.getDescription() + " $" + beverage4.Cost());
     }
 }
